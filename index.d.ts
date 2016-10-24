@@ -1,14 +1,14 @@
 import { Action as ReduxAction } from "redux";
 export interface Action<P> extends ReduxAction {
     type: string;
-    payload?: P;
+    payload: P;
     error?: boolean;
     meta?: Object;
 }
 export declare function isType<P>(action: ReduxAction, actionCreator: ActionCreator<P>): action is Action<P>;
 export interface ActionCreator<P> {
     type: string;
-    (payload?: P, meta?: Object): Action<P>;
+    (payload: P, meta?: Object): Action<P>;
 }
 export interface AsyncActionCreators<P, R> {
     type: string;
